@@ -21,7 +21,7 @@ Follow the steps in order. Each step focuses on a specific capability.
 
 ## Who this guide is for
 
-This guide is for:
+This guide is for
 
 - developers who already use GitHub Copilot day to day
 - engineers working on production codebases
@@ -47,7 +47,7 @@ Good prompts lead to better results.
 
 You can [improve prompt quality](../../playbooks/prompt-engineering/) by describing clearly what the code should do rather than how it should be written. Include any relevant constraints such as performance or readability. Reference existing functions or patterns already used in the codebase.
 
-You can prompt Copilot effectively by:
+You can prompt Copilot effectively by
 
 - describing behaviour in a comment before writing code
 - asking Copilot to explain code before asking it to change it
@@ -74,13 +74,13 @@ Copilot is most valuable in real codebases, not empty files.
 
 You can use Copilot to understand unfamiliar code, summarise files or functions, and suggest potential improvements or fixes before making changes yourself. You should provide your feedback on BizChat.
 
-Work more effectively with existing code by:
+Work more effectively with existing code by
 
 - asking Copilot to explain a file before editing it
 - asking Copilot to describe the impact of a proposed change
 - using Copilot Chat to explore options rather than make final decisions
 
-Reduce risk when working with Copilot by:
+Reduce risk when working with Copilot by
 
 - never assuming Copilot understands business context
 - verifying behaviour with tests and local runs
@@ -96,13 +96,13 @@ Copilot can help create tests and documentation, but only with guidance.
 
 Use Copilot to generate tests for existing functions. You should explicitly specify the test framework used by your project. Then, manually review the resulting tests to make sure they provide meaningful coverage and handle important edge cases.
 
-For documentation:
+For documentation
 
 - ask Copilot to summarise code behaviour
 - use it to draft README content
 - rewrite generated documentation in plain English
 
-You can improve the quality of outputs by:
+You can improve the quality of outputs by
 
 - ensuring generated tests still fail when code breaks
 - ensuring documentation reflects real behaviour rather than intent
@@ -142,13 +142,13 @@ Multi-file refactoring is one of the most credit-intensive agent mode tasks. A c
 
 Copilot is not aware of organisational standards, architectural decisions, or security and compliance requirements, so its suggestions must always be reviewed in the context of your organisation's policies and constraints.
 
-Common failure modes include:
+Common failure modes include
 
 - confident but incorrect code
 - insecure defaults
 - outdated patterns
 
-Build good habits when using Copilot by:
+Build good habits when using Copilot by
 
 - questioning suggestions that look complex
 - checking dependencies and licences

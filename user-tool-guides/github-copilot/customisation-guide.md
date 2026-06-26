@@ -27,7 +27,7 @@ This guide assumes you are already familiar with everyday Copilot usage. If you 
 
 ### What and when
 
-Instructions provide ongoing context about your project that influences every Copilot response. Use them for:
+Instructions provide ongoing context about your project that influences every Copilot response. Use them for
 
 - coding standards
 - project structure
@@ -84,7 +84,7 @@ Keep instructions concise because Copilot adds them to every request. Link to de
 
 ### What and when
 
-Custom agents are specialised personas you select for specific workflows. Use them when you need:
+Custom agents are specialised personas you select for specific workflows. Use them when you need
 
 - consistent expertise such as testing, security or documentation
 - restricted available tools
@@ -158,7 +158,7 @@ The agents tab provides a centralised dashboard for managing Copilot coding agen
 
 Copilot works autonomously in its own environment. It analyses your codebase, makes changes and runs tests. It then opens a pull request with you as the reviewer.
 
-To monitor and steer a session:
+To monitor and steer a session
 
 - view session logs, progress and token usage in real time
 - provide steering input during the session to redirect Copilot without stopping the run
@@ -180,7 +180,7 @@ Use `copilot --agent=test-specialist --prompt 'Add authentication tests'` or use
 
 Subagents are context-isolated sessions that you invoke to handle bounded tasks. They are not independent entities. They handle tasks such as research and analysis without cluttering your main context. The subagent loads what it needs, processes it and returns only the summary.
 
-Use subagents to:
+Use subagents to
 
 - manage context size
 - isolate research
@@ -190,19 +190,19 @@ Use subagents to:
 
 You can invoke subagents using three methods.
 
-Method 1 uses an explicit request.
+Method 1 uses an explicit request
 
 ```
 'Use #runSubagent to research React 18 best practices and return a summary'
 ```
 
-Method 2 invokes a custom agent as a subagent.
+Method 2 invokes a custom agent as a subagent
 
 ```
 'Use @documentation-reader as a subagent to fetch and summarise the migration guide'
 ```
 
-Method 3 configures agents to use subagents through agent instructions.
+Method 3 configures agents to use subagents through agent instructions
 
 ```markdown
 Before implementing features use the following steps.
@@ -268,7 +268,7 @@ Subagents cannot invoke other subagents. There is no nesting.
 
 ### What and when
 
-Hooks are custom shell commands that execute at points during agent execution. Use hooks to:
+Hooks are custom shell commands that execute at points during agent execution. Use hooks to
 
 - validate actions before they happen
 - enforce security policies
@@ -292,7 +292,7 @@ The preToolUse hook is the most powerful because it can block agent actions.
 
 ### File location
 
-Create `*.json` files in `.github/hooks/`.
+Create `*.json` files in `.github/hooks/`
 
 ```json
 {
@@ -370,7 +370,7 @@ echo "$(date -d @$((TIMESTAMP/1000))): Tool=$TOOL_NAME Result=$RESULT" >> audit.
 
 Hooks receive input as JSON via stdin containing context about the action.
 
-For preToolUse hooks only, output a JSON object with your permission decision.
+For preToolUse hooks only, output a JSON object with your permission decision
 
 ```json
 {
@@ -381,7 +381,7 @@ For preToolUse hooks only, output a JSON object with your permission decision.
 
 ### Common use cases
 
-Hooks support common use cases to:
+Hooks support common use cases to
 
 - block destructive commands and enforce file access policies for security
 - log all actions for audit trails for compliance
@@ -413,7 +413,7 @@ Skills are folders with instructions, scripts and resources. Copilot automatical
         └── baseline.png
 ```
 
-Each folder type has a specific role:
+Each folder serves a specific role with
 
 - templates containing code that Copilot modifies
 - references containing documentation that Copilot reads for guidance
@@ -431,13 +431,13 @@ description: When to use this skill. Be specific so Copilot knows when to activa
 ---
 ```
 
-Content sections should include:
+Content sections should include
 
 - when to use for specific trigger scenarios
 - available tools for scripts and their usage
 - best practices for key guidelines
 
-Script usage example where `--param` is the parameter description.
+Script usage example where `--param` is the parameter description
 
 ```bash
 python scripts/tool.py --param value
@@ -454,26 +454,26 @@ description: Generate React components following project conventions. Use when c
 ---
 ```
 
-Use this content structure when:
+Use this content structure when
 
 - creating new React components
 - generating custom hooks
 - scaffolding component tests
 
-Generation script:
+Generation script
 
 ```bash
 python scripts/generate.py --name Button --type basic --with-tests
 ```
 
-Parameters include:
+Parameters include
 
 - `--name` which is the component name in PascalCase
 - `--type` which is either basic, form, layout or data display
 - `--with-tests` which includes the test file
 - `--with-story` which includes the Storybook story
 
-This script creates a:
+This script creates a
 
 - component file with TypeScript
 - CSS module
@@ -483,7 +483,7 @@ This script creates a:
 
 Use `templates/basic-component.tsx` as the base template with placeholder values that get replaced during generation.
 
-Use:
+Use
 
 - PascalCase matching component name for files
 - `ComponentNameProps` interfaces for props
@@ -513,11 +513,11 @@ Result
 
 ### Complete example workflow
 
-This example task adds comprehensive tests to an authentication module.
+In this example task, comprehensive tests are added for an authentication module.
 
 1. Custom agent where user selects `@test-specialist` with restricted tools that cannot modify production code and testing expertise.
 
-2. Instructions that Copilot applies automatically where project uses Jest, requiring 80% coverage and follows the Arrange, Act, Assert (AAA) pattern.
+2. Instructions that Copilot applies automatically where project uses Jest, requiring 80% coverage and follows the AAA pattern.
 
 3. Hooks where `sessionStart` logs task initiation, `preToolUse` validates file edits, `postToolUse` logs test creation and `sessionEnd` generates coverage reports.
 
@@ -525,7 +525,7 @@ This example task adds comprehensive tests to an authentication module.
 
 5. Subagent where test specialist needs research, invokes `@documentation-reader`, gets Jest best practices summary and returns to main agent.
 
-6. Result is a complete test suite following project conventions (instructions), created by the specialist (custom agent), validated by security policies (hooks), using templates (skill) and informed by research (subagent).
+6. Result is a complete test suite following project conventions (instructions), created by the specialist (custom agent) and validated by security policies (hooks). It uses templates (skill) and is informed by research (subagent).
 
 ### Comparison
 

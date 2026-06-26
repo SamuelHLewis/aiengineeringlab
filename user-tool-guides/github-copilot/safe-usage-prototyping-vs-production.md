@@ -255,16 +255,20 @@ You must not:
 
 All AI-generated code for production must undergo human review before commit. The review must verify the following aspects.
 
+Important: Copilot code review does not satisfy mandatory human code review requirements. Copilot reviews are marked as 'Comment' reviews, not 'Approve' reviews. They do not count toward required approvals and will not block merging. See [Pull request capabilities](pull-request-capabilities.md#copilot-review-and-mandatory-code-review-requirements) for full details on Copilot PR review limitations.
+
 | Review aspect | Requirement |
 |---------------|-------------|
 | Logic correctness | Code performs intended function correctly |
-| Security | No vulnerabilities (injection, XSS, auth bypass, etc.) |
+| Security | No vulnerabilities (injection, XSS, auth bypass) |
 | Error handling | Appropriate exception handling and logging |
 | Dependencies | All packages verified and approved |
 | Test coverage | Adequate tests exist for generated code |
 | Accessibility | WCAG compliance for user-facing code |
 | Standards compliance | Follows GDS Service Standard and Technology Code of Practice |
 | Documentation | Code is maintainable and documented |
+
+You can use Copilot code review as an additional automated scan before human review. However, it does not replace any mandatory human review step. See [Pull request capabilities](pull-request-capabilities.md) for guidance on when to use Copilot PR review and how to interpret its suggestions.
 
 ### PR-03: security scanning requirements
 
