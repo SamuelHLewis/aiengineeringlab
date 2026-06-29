@@ -277,7 +277,7 @@ To test that context is being applied, try a prompt that would normally require 
 
 ### Troubleshooting
 
-If your MCP server is not connecting.
+If your MCP server is not connecting, follow these steps.
 
 1. Check your configuration file is in the correct location.
 2. Ensure the JSON is valid (no trailing commas, proper quotes).
@@ -287,7 +287,7 @@ If your MCP server is not connecting.
    npx -y @your-org/your-mcp-server
    ```
 
-If standards are not being applied.
+If standards are not being applied, follow these steps.
 
 1. Verify your MCP server is running.
 2. Be specific in your prompts – the server matches relevant standards to your request.

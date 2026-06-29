@@ -13,7 +13,7 @@ The guidance below describes how the premium request system worked and how to ma
 
 ## Who this is for
 
-This guide is for
+This guide is for:
 
 - engineers who need to understand credit usage and what happens when they run out
 - enterprise administrators and organisation owners managing GitHub Copilot and configuring billing policies

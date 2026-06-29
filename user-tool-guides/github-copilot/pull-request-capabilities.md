@@ -102,7 +102,7 @@ You can then address these issues before requesting review from colleagues.
 
 Copilot code review works with most popular programming languages and frameworks. Quality varies.
 
-Well supported languages include:
+Well-supported languages include:
 
 - JavaScript
 - TypeScript

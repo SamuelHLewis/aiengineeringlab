@@ -1,9 +1,9 @@
 
-> MCP server availability depends on your organisation's approval. Check with your organisation before setting up MCP servers.
+> Model Context Protocol (MCP) server availability depends on your organisation's approval. Check with your organisation before setting up Model Context Protocol (MCP) servers.
 
-# MCP server best practices
+# Model Context Protocol (MCP) server best practices
 
-This document helps you operate, test, and maintain MCP servers effectively. It covers proven patterns for security, monitoring, and reliability.
+This document helps you operate, test, and maintain Model Context Protocol (MCP) servers effectively. It covers proven patterns for security, monitoring, and reliability.
 
 ## Contents
 
@@ -64,11 +64,11 @@ For architectural and design principles, see [MCP server design and architecture
 Security is fundamental to operating MCP servers. All MCP servers must implement strong authentication, authorisation, and data protection.
 
 Critical security requirements include:
-- implement OAuth 2.1 for HTTP transports (mandatory as of March 2025 MCP specification)
-- store secrets in enterprise secret managers (never inline credentials)
-- validate all inputs with strict schemas
-- enforce per tool and per parameter authorisation checks
-- use least privilege principles with minimal, targeted scopes
+- implementing OAuth 2.1 for HTTP transports (mandatory as of March 2025 MCP specification)
+- storing secrets in enterprise secret managers (never inline credentials)
+- validating all inputs with strict schemas
+- enforcing per tool and per parameter authorisation checks
+- using least privilege principles with minimal, targeted scopes
 
 ---
 
@@ -85,10 +85,10 @@ Key metrics to track include:
 - error trends over time (are errors increasing or decreasing?)
 
 Alerting thresholds include:
-- alert when error rate exceeds 5% for any tool
-- alert on authentication failures (potential security issue)
-- alert on upstream service failures (dependency problems)
-- alert on unexpected error types (potential bugs)
+- alerting when error rate exceeds 5% for any tool
+- alerting on authentication failures (potential security issue)
+- alerting on upstream service failures (dependency problems)
+- alerting on unexpected error types (potential bugs)
 
 ### Implement structured error logging
 
@@ -127,7 +127,7 @@ Never log:
 
 Help users and support teams debug issues quickly.
 
-For operators:
+Operators should:
 - document common error scenarios and resolutions
 - provide troubleshooting decision trees
 - include correlation IDs in error responses for support lookups
@@ -158,30 +158,30 @@ Note that SSE (Server-Sent Events) transport has been deprecated as of the June 
 Support request cancellation and timeouts to prevent resource starvation.
 
 Implementation requirements include:
-- honour cancellation requests from clients
-- set reasonable timeouts for all operations
-- clean up resources properly on cancellation
-- document expected response times
+- honouring cancellation requests from clients
+- setting reasonable timeouts for all operations
+- cleaning up resources properly on cancellation
+- documenting expected response times
 
 ### Handle streaming responsibly
 
 When using Streamable HTTP, best practices include:
-- emit incremental chunks for long operations
-- advertise total counts where feasible
-- for large payloads, return handles or URIs to resources instead of inlining data
-- implement proper backpressure handling
-- set and document streaming limits
+- emitting incremental chunks for long operations
+- advertising total counts where feasible
+- for large payloads, returning handles or URIs to resources instead of inlining data
+- implementing proper backpressure handling
+- setting and documenting streaming limits
 
 ## Testing and quality
 
 ### Test with real hosts and failure injection
 
 Required testing includes:
-- validate against multiple MCP clients and hosts
-- test both stdio and Streamable HTTP transports
-- inject faults such as slow downstreams, partial failures, and malformed inputs
-- verify discovery, schema validation, and error paths end to end
-- test traditional content blocks and structured content outputs
+- validating against multiple MCP clients and hosts
+- testing both stdio and Streamable HTTP transports
+- injecting faults such as slow downstreams, partial failures, and malformed inputs
+- verifying discovery, schema validation, and error paths end to end
+- testing traditional content blocks and structured content outputs
 
 Tools include:
 - official MCP Inspector tool for manual testing
@@ -196,20 +196,20 @@ Beyond functional testing, validate the complete user experience.
 2. Tool discovery. Confirm AI agents see the expected tool list.
 3. Tool invocation. Validate behaviour matches expectations, including all failure modes.
 
-Recommended tool is MCP Inspector (`npx @modelcontextprotocol/inspector`) to simulate the client perspective.
+The recommended tool is MCP Inspector (`npx @modelcontextprotocol/inspector`) to simulate the client perspective.
 
 ### Implement lifecycle testing
 
-Consider the complete MCP server lifecycle:
+Testing should cover the complete MCP server lifecycle, which has two distinct phases.
 
-Connection phase:
+The connection phase should verify:
 - can clients connect with minimal configuration?
 - are tools discoverable even if full configuration is incomplete?
 
-Tool invocation:
-- make each tool call self contained
-- create connections per tool call, not on server start
-- allow graceful degradation when dependencies are unavailable
+The tool invocation phase should ensure:
+- each tool call is self contained
+- connections are created per tool call, not on server start
+- graceful degradation is allowed when dependencies are unavailable
 
 This pattern improves usability and reliability. Users can explore available tools even when the server is not fully configured.
 
@@ -217,19 +217,19 @@ This pattern improves usability and reliability. Users can explore available too
 
 ### Instrument like any service you operate
 
-Implement comprehensive observability:
+You should implement comprehensive observability across logging, metrics, and tracing.
 
-Logging:
-- emit structured logs with correlation IDs
-- include tool name and invocation ID
-- record latency, success and failure, and token cost hints
-- log soft limits and rate limits explicitly
+Logging should include:
+- emitting structured logs with correlation IDs
+- including tool name and invocation ID
+- recording latency, success and failure, and token cost hints
+- logging soft limits and rate limits explicitly
 
-Metrics:
-- track request counts, latencies (p50, p95, p99)
-- monitor error rates by tool and error type
-- measure token usage and costs
-- track connection counts and durations
+Metrics should track:
+- request counts, latencies (p50, p95, p99)
+- error rates by tool and error type
+- token usage and costs
+- connection counts and durations
 
 Tracing:
 - implement distributed tracing for complex workflows
@@ -238,9 +238,8 @@ Tracing:
 
 ### Implement health checks
 
-Expose comprehensive health status:
+Expose a comprehensive health status endpoint that covers the following components:
 
-Health check components include:
 - liveness (is the server process running?)
 - readiness (can the server accept requests?)
 - dependency health (are external dependencies available?)
@@ -263,10 +262,10 @@ An example health check response.
 ### Package and deploy like a microservice
 
 Container best practices include:
-- containerise your servers with minimal runtime images
-- clearly declare transport and invocation commands
-- publish to trusted container registries
-- sign and verify container images
+- containerising your servers with minimal runtime images
+- clearly declaring transport and invocation commands
+- publishing to trusted container registries
+- signing and verifying container images
 
 Documentation requirements include:
 - tool catalog with descriptions
@@ -277,10 +276,10 @@ Documentation requirements include:
 ### Implement graceful degradation
 
 Design principles include:
-- return cached data when upstream services fail
-- provide partial results when some operations fail
-- include retry guidance in error messages
-- implement circuit breakers for unreliable dependencies
+- returning cached data when upstream services fail
+- providing partial results when some operations fail
+- including retry guidance in error messages
+- implementing circuit breakers for unreliable dependencies
 
 An example pattern.
 ```javascript
@@ -309,20 +308,20 @@ Appropriate uses include:
 - getting user preferences for ambiguous requests
 
 Security requirements include:
-- never use elicitation to harvest sensitive data
-- keep prompts concise and specific
-- validate responses against your tool's schema
-- fall back gracefully if host does not support elicitation
+- never using elicitation to harvest sensitive data
+- keeping prompts concise and specific
+- validating responses against your tool's schema
+- falling back gracefully if host does not support elicitation
 
 Elicitation was introduced in the June 2025 MCP revision and is not universally supported. Always check client capabilities before using elicitation.
 
 ### Obtain explicit consent for impactful actions
 
 For operations that change state, spend money, or access sensitive data, required safeguards include:
-- require confirmation via elicitation or dry run mode
-- return a diff of intended changes before execution
-- use structured content for machine readable change summaries
-- implement approval workflows for high risk operations
+- requiring confirmation via elicitation or dry run mode
+- returning a diff of intended changes before execution
+- using structured content for machine readable change summaries
+- implementing approval workflows for high risk operations
 
 An example workflow.
 
@@ -333,10 +332,10 @@ An example workflow.
 ### Implement fine grained authorisation
 
 Best practices include:
-- enforce per tool authorisation checks
-- implement per parameter authorisation where needed
-- support role-based access control (RBAC)
-- document required permissions clearly
+- enforcing per tool authorisation checks
+- implementing per parameter authorisation where needed
+- supporting role-based access control (RBAC)
+- documenting required permissions clearly
 
 For example:
 - `read_documents` permission → can list and read documents
@@ -348,31 +347,31 @@ For example:
 ### Prefer official and vetted servers
 
 Selection criteria include:
-- start with vendor provided MCP servers for common services
-- only adopt servers that are actively maintained, security reviewed, version controlled, and policy compliant
+- starting with vendor provided MCP servers for common services
+- only adopting servers that are actively maintained, security reviewed, version controlled, and policy compliant
 
 When building custom servers:
-- contribute fixes upstream to existing servers when possible
-- wrap with gateway policies rather than forking
-- build custom servers only when gaps are material
-- plan migration paths if third party servers fall behind
+- contributing fixes upstream to existing servers when possible
+- wrapping with gateway policies rather than forking
+- building custom servers only when gaps are material
+- planning migration paths if third party servers fall behind
 
 ### Follow platform guidelines
 
 Important considerations include:
 - MCP adoption varies across platforms (Windows, macOS, Linux)
 - not all clients support all features (OAuth 2.1, structured content, elicitation)
-- check platform documentation before relying on specific features
-- implement graceful degradation for unsupported features
+- checking platform documentation before relying on specific features
+- implementing graceful degradation for unsupported features
 
 ### Document and share
 
 Community best practices include:
-- publish clear README with setup instructions
-- share configuration examples
-- document common issues and solutions
-- contribute to the MCP community discussions
-- share lessons learned from real world deployments
+- publishing a clear README with setup instructions
+- sharing configuration examples
+- documenting common issues and solutions
+- contributing to the MCP community discussions
+- sharing lessons learned from real world deployments
 
 ---
 

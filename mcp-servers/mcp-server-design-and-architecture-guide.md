@@ -65,13 +65,13 @@ MCP servers fall into distinct categories based on their purpose and the type of
 
 Knowledge servers provide standards, guidelines, documentation, and reference materials to AI assistants without allowing modifications.
 
-Characteristics:
+Knowledge servers have the following characteristics:
 - primarily expose resources (read only data)
 - few or no tools
 - focus on context retrieval and search
 - examples such as standards documentation, API specifications, coding guidelines
 
-When to use:
+Use knowledge servers when:
 - integrating organisational standards
 - providing reference documentation
 - making policies and guidelines accessible
@@ -94,13 +94,13 @@ server.addResource({
 
 Function servers provide tools that perform specific actions or operations, such as querying databases, calling APIs, or processing data.
 
-Characteristics:
+Function servers have the following characteristics:
 - primarily expose tools (executable operations)
 - may include supporting resources for tool documentation
 - enable AI to perform actions on behalf of users
 - examples such as database queries, API integrations, file operations
 
-When to use:
+Use function servers when:
 - integrating with existing systems
 - automating common workflows
 - providing specialised capabilities
@@ -112,15 +112,15 @@ An example is a server that queries internal department systems or submits forms
 
 Function servers are inherently high risk because they perform actions that can modify system state, execute commands, and access sensitive data.
 
-Key security requirements:
-- establish authentication between all components
-- implement fine grained access control with least privilege
-- require user confirmation for actions that alter data or environment state
-- strictly validate all inputs from clients
-- implement rate limiting and encrypted channels (TLS)
-- monitor for session abuse with anomaly detection
+Key security requirements include:
+- establishing authentication between all components
+- implementing fine grained access control with least privilege
+- requiring user confirmation for actions that alter data or environment state
+- strictly validating all inputs from clients
+- implementing rate limiting and encrypted channels (TLS)
+- monitoring for session abuse with anomaly detection
 
-Primary threats to mitigate:
+Primary threats to mitigate include:
 - confused deputy attacks (users accessing resources via server privileges)
 - prompt injection attacks (AI tricked into unintended actions)
 - tool poisoning (manipulated tool metadata or execution logic)
@@ -163,13 +163,13 @@ server.addTool({
 
 Hybrid servers combine reference knowledge with operational capabilities, providing both context and the ability to act on that context.
 
-Characteristics:
+Hybrid servers have the following characteristics:
 - expose both resources and tools
 - resources inform tool usage
 - tools may create or modify resources
 - examples such as documentation with validation tools, standards with compliance checkers
 
-When to use:
+Use hybrid servers when:
 - providing guidance alongside enforcement
 - offering reference materials with related actions
 - creating self documenting systems
@@ -205,13 +205,13 @@ server.addTool({
 
 Prompt servers use MCP's prompts feature to provide pre configured workflows that chain multiple operations together, simplifying complex tasks.
 
-Characteristics:
+Prompt servers have the following characteristics:
 - expose prompts as reusable workflows
 - may delegate to tools or other servers
 - reduce cognitive load for common tasks
 - examples such as multi step analysis workflows, guided processes
 
-When to use:
+Use prompt servers when:
 - standardising complex workflows
 - reducing tool budget by wrapping multiple operations
 - providing guardrails around sensitive operations
@@ -401,7 +401,7 @@ The following example shows the error message structure.
 
 Design outputs with both human and machine audiences in mind using structured content with `outputSchema`.
 
-Benefits:
+Benefits include:
 - LLM parsable responses alongside human readable text
 - reduced token usage through efficient serialisation
 - better agent decision making with typed data
@@ -441,29 +441,29 @@ Transform API responses into natural language summaries alongside structured dat
 
 Beyond standard function server security, API integration servers must address:
 
-Credential isolation:
-- store each upstream API's credentials separately in secret managers
-- use independent credentials per API
+Address credential isolation by:
+- storing each upstream API's credentials separately in secret managers
+- using independent credentials per API
 
-Per API permissions:
+Enforce per API permissions by ensuring:
 - MCP server access does not grant access to all upstream APIs
-- enforce per API authorisation checks
+- per API authorisation checks are enforced
 
-Request validation:
-- validate all parameters before calling upstream APIs
-- prevent injection attacks
+Perform request validation by:
+- validating all parameters before calling upstream APIs
+- preventing injection attacks
 
-Response sanitisation:
-- filter upstream responses to prevent leaking sensitive data or tokens
-- remove authentication credentials from responses
+Perform response sanitisation by:
+- filtering upstream responses to prevent leaking sensitive data or tokens
+- removing authentication credentials from responses
 
-Audit logging:
+Implement audit logging to:
 - log all upstream API calls with user context
 - record request parameters and responses for security review
 
-Approval workflows:
-- implement approval workflows when calling APIs in different trust domains
-- require explicit consent for cross domain operations
+Implement approval workflows to:
+- require explicit consent when calling APIs in different trust domains
+- ensure explicit consent for cross domain operations
 
 ## Creating new MCP servers
 
@@ -508,12 +508,12 @@ For tools:
 
 Before writing functional code, implement the security layer. Security is not optional for MCP servers, especially function servers that perform actions.
 
-Essential security components:
-- set up OAuth 2.1 if using HTTP transport
-- configure secret management
-- define authorisation rules
-- implement input validation schemas
-- plan audit logging
+Essential security components include:
+- setting up OAuth 2.1 if using HTTP transport
+- configuring secret management
+- defining authorisation rules
+- implementing input validation schemas
+- planning audit logging
 
 For comprehensive security implementation guidance, see:
 - [MCP best practices – security first](mcp-best-practices.md#security-first) – security requirements and checklist
@@ -584,7 +584,7 @@ Often you do not need to create a new server from scratch. You can extend or wra
 
 Wrap an existing MCP server to add additional context, authorisation, or transformation logic without modifying the original.
 
-When to use:
+Use the wrapper pattern when:
 - adding department specific guardrails
 - implementing additional authorisation
 - transforming responses for your context
@@ -617,7 +617,7 @@ class SecureStandardsServer {
 
 Combine multiple existing servers into a unified interface, reducing tool budget and simplifying configuration.
 
-When to use:
+Use the composite pattern when:
 - creating domain specific assistants
 - reducing the number of servers users must configure
 - providing a unified interface to related capabilities
@@ -650,7 +650,7 @@ class GovStandardsServer {
 
 Fork an existing open source MCP server and add your specific requirements.
 
-When to use:
+Use the fork and enhance pattern when:
 - existing server is close but missing critical features
 - upstream is inactive or unresponsive
 - you need deep customisation
@@ -673,12 +673,12 @@ Many organisations have existing documentation repositories or internal wikis. Y
 
 Configure your server to fetch content from existing sources at runtime.
 
-Benefits:
+Benefits include:
 - always up to date
 - no content duplication
 - single source of truth maintained
 
-Considerations:
+Considerations include:
 - requires network access to content source
 - potential latency on first fetch
 - need for authentication if content is private
@@ -688,13 +688,13 @@ Considerations:
 
 Generate MCP server resources from existing documentation as part of your build and deployment pipeline.
 
-Benefits:
+Benefits include:
 - no runtime dependencies
 - fast response times
 - can preprocess and optimise content
 - works offline
 
-Considerations:
+Considerations include:
 - need rebuild to pick up changes
 - larger deployment artifact
 - must sync with documentation updates
@@ -705,19 +705,19 @@ Considerations:
 
 MCP servers need to integrate with your organisation's existing systems and practices.
 
-Authentication and authorisation:
+For authentication and authorisation:
 - use your organisation's identity provider (Azure AD, Google Workspace, and similar)
 - implement OAuth 2.1 with your identity service as the authorisation server
 - enforce role based access control aligned with existing roles
 - integrate with existing secret management solutions
 
-Networking and deployment:
+For networking and deployment:
 - deploy MCP servers in your existing container orchestration platform
 - use internal DNS and service discovery
 - configure network policies and firewalls appropriately
 - integrate with API gateways if using HTTP transport
 
-Observability:
+For observability:
 - send logs to your central logging service (ELK, Splunk, and similar)
 - expose metrics in your standard format (Prometheus, DataDog, and similar)
 - implement distributed tracing compatible with your tools
@@ -830,18 +830,18 @@ Use Inspector to:
 
 Once deployed, monitor actual usage to identify issues and improvement opportunities.
 
-Usage metrics:
+Usage metrics include:
 - most and least used tools
 - success versus failure rates by tool
 - response time distributions
 - token usage per tool
 - connection errors and timeouts
 
-User feedback:
-- survey users about helpfulness
-- track thumbs up and thumbs down on AI responses
-- monitor support tickets related to MCP servers
-- conduct user interviews for qualitative feedback
+Collect user feedback by:
+- surveying users about helpfulness
+- tracking thumbs up and thumbs down on AI responses
+- monitoring support tickets related to MCP servers
+- conducting user interviews for qualitative feedback
 
 The following example shows performance tracking and logging.
 ```javascript
@@ -875,7 +875,7 @@ server.middleware((req, res, next) => {
 
 The problem is creating a single server with 50 or more tools that spans multiple domains.
 
-Symptoms:
+Symptoms include:
 - difficult to maintain and test
 - security boundaries unclear
 - poor performance
@@ -887,7 +887,7 @@ The solution is to split into multiple focused servers following single responsi
 
 The problem is that tool names and descriptions focus on technical mechanisms rather than user outcomes.
 
-Symptoms:
+Symptoms include:
 - tools named like execute-sql, call-api-endpoint, run-script
 - users need to understand implementation to use effectively
 - changes to implementation break user workflows
@@ -898,7 +898,7 @@ The solution is to design outcome focused interfaces. Name tools for what users 
 
 The problem is that errors from upstream systems bubble up without context.
 
-Symptoms:
+Symptoms include:
 - generic error messages like 'Request failed'
 - no guidance on how to resolve issues
 - AI cannot determine if error is retryable
@@ -933,7 +933,7 @@ try {
 
 The problem is that the server works in unit tests but fails when used with actual AI code assistants.
 
-Symptoms:
+Symptoms include:
 - tools do not appear in AI's tool list
 - AI cannot understand tool descriptions
 - responses are not in expected format
@@ -945,7 +945,7 @@ The solution is to always test with the actual AI tools your users will use (Cla
 
 The problem is building functionality first, planning to add security later.
 
-Symptoms:
+Symptoms include:
 - secrets hardcoded or in configuration files
 - no authentication or authorisation checks
 - no input validation
@@ -957,7 +957,7 @@ The solution is to implement security from day one.
 
 The problem is making breaking changes to tools without versioning.
 
-Symptoms:
+Symptoms include:
 - existing prompts and workflows break unexpectedly
 - users cannot pin to stable versions
 - no way to test changes before rollout

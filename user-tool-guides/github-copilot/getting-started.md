@@ -27,13 +27,13 @@ This guide is for:
 - DevOps and platform engineers
 - technical staff working in UK public sector organisations
 
-You may be new to GitHub Copilot or already experienced with modern IDEs.
+You may be new to GitHub Copilot or already experienced with modern integrated development environments (IDEs).
 
 ## What GitHub Copilot is
 
 GitHub Copilot is an AI coding assistant that suggests code and explains existing code inside your development tools.
 
-It can help you to
+It can help you to:
 
 - write code faster
 - understand unfamiliar code
@@ -58,7 +58,7 @@ If you are on a personal plan and should be on an organisation-managed plan, ask
 
 Many public sector organisations use GitHub Copilot Business or Enterprise.
 
-You should know
+You should know:
 
 - your organisation controls licensing and policies
 - Copilot Business and Enterprise data is not used to train models
@@ -70,7 +70,7 @@ Read the [GitHub Copilot Trust Center](https://copilot.github.trust.page/faq) an
 
 GitHub Copilot works in several IDEs. This guide covers Visual Studio Code and JetBrains IDEs.
 
-You need
+You need:
 
 - a GitHub account approved by your organisation
 - an active Copilot licence
@@ -103,13 +103,13 @@ Once Copilot is set up, start using it to generate code.
 
 ### Generate code in Visual Studio Code
 
-You can generate code by
+You can generate code by:
 
 - starting to type code and accepting inline suggestions
 - writing a comment that describes what you want to build
 - using Copilot Chat to ask for code or explanations
 
-You can improve how you work in Visual Studio Code by
+You can improve how you work in Visual Studio Code by:
 
 - accepting suggestions only after reading them carefully
 - using comments to describe intent rather than exact syntax
@@ -121,13 +121,13 @@ See [Get started with GitHub Copilot in VS Code](https://code.visualstudio.com/d
 
 JetBrains IDEs support inline suggestions and chat based prompts.
 
-You can generate code by
+You can generate code by:
 
 - starting to type and reviewing inline completions
 - writing comments that describe behaviour
 - using the Copilot chat panel for larger changes
 
-You can improve how you work in JetBrains IDEs by
+You can improve how you work in JetBrains IDEs by:
 
 - using Copilot for small focused tasks rather than large rewrites
 - combining Copilot suggestions with built in refactoring tools
@@ -137,7 +137,7 @@ You can improve how you work in JetBrains IDEs by
 
 You are always responsible for the code you commit.
 
-You should use Copilot responsibly by
+You should use Copilot responsibly by:
 
 - reviewing all generated code
 - checking security, performance and accessibility
@@ -149,11 +149,10 @@ For structured learning, complete [GitHub Copilot Fundamentals Part 1 of 2](http
 
 ## 5. Next steps
 
-After you are comfortable with the basics, you can
+After you are comfortable with the basics, you can:
 
 - improve how you write prompts
 - use Copilot to generate tests and documentation
 - explore advanced features such as refactoring and code review
 
-Once you are confident using GitHub Copilot, consider reading the [advanced guide on 
-using GitHub Copilot](advanced-use.md).
+Once you are confident using GitHub Copilot, consider reading the [advanced guide on using GitHub Copilot](advanced-use.md).

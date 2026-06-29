@@ -11,7 +11,7 @@ Not all teams can access the latest large-context models. Government departments
 
 ## Who this applies to
 
-This guide is for engineers, technical leads and delivery teams in UK government organisations. It covers using AI coding assistants when you are
+This guide is for engineers, technical leads and delivery teams in UK government organisations. It covers using AI coding assistants when you are:
 
 - working with models procured through older or fixed contracts
 - using self-hosted or on-premises model deployments
@@ -75,7 +75,7 @@ Under a 4,096-token model, a single 300-line file, a system prompt, and a questi
 
 ### Signs that context is insufficient
 
-You may be approaching or exceeding your model's context limit when
+You may be approaching or exceeding your model's context limit when:
 
 - the model gives vague or non-specific answers about code you have shared
 - the model appears to have forgotten earlier parts of the conversation
@@ -93,7 +93,7 @@ Before starting a session, estimate how much context your inputs will consume.
 3. Subtract any persistent conversation history from previous exchanges.
 4. What remains is your working budget for code, files, and questions.
 
-For a model with a 16,384-token window, you would
+For a model with a 16,384-token window, you would:
 
 - subtract 500 tokens for system prompt
 - subtract 2,000 tokens for conversation history
@@ -104,7 +104,7 @@ If your task requires more files than your budget allows, you need to apply the 
 
 ### When to split a session
 
-Start a new conversation when
+Start a new conversation when:
 
 - you have moved to a different part of the codebase or a different problem
 - the model is noticeably forgetting earlier context
@@ -197,14 +197,14 @@ This gives the model the information it needs to work with the service without c
 
 Be selective about which files you include. Do not open your entire codebase.
 
-Include only
+Include only:
 
 - the file you are currently modifying
 - the interface or type definition for any service you are calling
 - the test file for the code under development (if writing tests)
 - the specific function or class you need context about
 
-Exclude
+Exclude:
 
 - files in unrelated modules or services
 - build configuration files (package.json, pom.xml) unless directly relevant
@@ -302,7 +302,7 @@ For models with windows under 32,000 tokens, large tasks need to be broken into 
 
 ### Planning your chunks
 
-Before starting, identify the discrete steps in your task. Each step should be completable with
+Before starting, identify the discrete steps in your task. Each step should be completable with:
 
 - fewer than 3 to 4 source files included
 - a clear, specific output
@@ -351,7 +351,7 @@ If your team loses access to a large-context model and needs to fall back to a s
 
 ### Step 1: audit what relied on large context
 
-Identify which tasks in your workflow depended on large context, such as
+Identify which tasks in your workflow depended on large context, such as:
 
 - whole-codebase refactors where many files were shared simultaneously
 - long agentic sessions where the model retained state across many steps
@@ -401,7 +401,7 @@ If the switch is long-term, update your team's context engineering standards to 
 
 ## Context window size as a model selection factor
 
-Context window size should be one of several factors when selecting a model. It matters most when your tasks regularly involve
+Context window size should be one of several factors when selecting a model. It matters most when your tasks regularly involve:
 
 - large codebases with many interdependencies
 - long conversations that need to carry state

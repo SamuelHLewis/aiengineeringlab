@@ -53,13 +53,13 @@ The official Playwright MCP server from Microsoft provides cross-browser automat
 
 Find the documentation at [github.com/microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp).
 
-Key features:
+Key features of the Playwright MCP server are that it:
 
-- uses browser's accessibility tree for structured, deterministic automation
-- no vision models or screenshot based approaches needed
-- cross browser support (Chromium, Firefox, WebKit)
-- configurable via JSON for custom setups
-- headless mode for CI and CD pipelines
+- uses the browser's accessibility tree for structured, deterministic automation
+- requires no vision models or screenshot based approaches
+- supports cross-browser automation (Chromium, Firefox, WebKit)
+- is configurable via JSON for custom setups
+- supports headless mode for CI and CD pipelines
 - supports persistent profiles and isolated contexts
 
 ---
@@ -89,7 +89,7 @@ Key differences from community alternatives:
 - officially maintained and supported by Deque Systems
 - integration with axe Assistant AI chatbot trained on Deque University knowledge base
 - full axe Platform integration with enterprise features
-- requires API key and commercial subscription
+- requirement for an API key and commercial subscription
 - context aware testing beyond basic Axe core rule execution
 - enterprise grade security, privacy controls, and audit logging
 - professional support and long term maintenance commitment
@@ -108,7 +108,7 @@ MCP Accessibility Scanner is a community developed accessibility testing server 
 
 Find the documentation at [github.com/JustasMonkev/mcp-accessibility-scanner](https://github.com/JustasMonkev/mcp-accessibility-scanner).
 
-Key features:
+Key features of the MCP Accessibility Scanner include:
 
 - full WCAG 2.0, 2.1, and 2.2 compliance checking (A, AA, AAA levels)
 - detailed JSON reports with remediation guidance
@@ -127,10 +127,10 @@ A11y MCP is a community developed accessibility testing server by Ronan Takizawa
 
 Find the documentation at [github.com/ronantakizawa/a11y-mcp](https://github.com/ronantakizawa/a11y-mcp) or install the npm package `a11y-mcp-server`.
 
-Key features:
+Key features of A11y MCP include:
 
-- test web page accessibility via URL
-- test HTML snippets for accessibility issues
+- web page accessibility testing via URL
+- HTML snippet accessibility testing
 - ARIA validation for proper attribute usage
 - colour contrast analysis for WCAG compliance
 - integration with Claude Desktop, Cursor, and other MCP clients
@@ -214,26 +214,26 @@ If existing servers do not meet your needs, you can build custom implementations
 
 When evaluating MCP servers for development and testing, consider the following criteria.
 
-Vendor trust:
+Vendor trust factors include:
 
 - official maintenance by platform vendor or testing framework
 - track record for security updates and active development
 - long term support commitment
 
-Functional fit:
+Functional fit factors include:
 
 - addresses clear development workflow needs
 - supports required test frameworks and browsers
 - integrates with CI and CD pipeline
 
-Security and compliance:
+Security and compliance requirements include:
 
 - appropriate access controls and credential management
 - OAuth 2.1 authentication support
 - audit logging capabilities
 - NCSC security standards compliance
 
-Government requirements:
+Government requirements include:
 
 - compliance certifications (Cyber Essentials, ISO 27001, SOC 2)
 - UK data sovereignty

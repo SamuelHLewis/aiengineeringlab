@@ -3,7 +3,7 @@
 
 # MCP servers: partner implementations
 
-This guide covers examples of MCP servers from major technology vendors to evaluate for your team's needs.
+This guide covers examples of Model Context Protocol (MCP) servers from major technology vendors to evaluate for your team's needs.
 
 ## Contents
 
@@ -63,9 +63,9 @@ Platinum members:
 - Microsoft
 - OpenAI
 
-This vendor neutral governance ensures MCP remains open, interoperable, and community driven as critical infrastructure for AI.
+This vendor-neutral governance ensures MCP remains open, interoperable, and community driven as critical infrastructure for AI.
 
-Adoption metrics (as of January 2026):
+Adoption metrics as of January 2026 include:
 
 - over 97 million monthly SDK downloads
 - 10,000 active MCP servers and more
