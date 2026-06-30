@@ -20,7 +20,7 @@ This guide is for:
 
 ## Before you start
 
-Before using this guidance, you should
+Before using this guidance, you should:
 
 - have GitHub Copilot Business or Enterprise enabled for your organisation
 - understand your organisation's billing structure
@@ -44,7 +44,7 @@ See also [billing for GitHub Copilot in organisations and enterprises](https://d
 
 Premium credits, also called premium requests, are a unit of measurement for using advanced AI capabilities in GitHub Copilot. Think of them as credits you spend when you use more powerful models or advanced features that require additional computing resources.
 
-A premium request is any interaction where you ask Copilot to use premium features. Examples include
+A premium request is any interaction where you ask Copilot to use premium features. Examples include:
 
 - generating code with a premium AI model
 - getting a pull request reviewed
@@ -54,7 +54,7 @@ Each time you use these capabilities, you consume premium requests based on the 
 
 ### What is included in your plan
 
-All paid Copilot plans include unlimited
+All paid Copilot plans include unlimited:
 
 - code completions using included models (GPT-5 mini)
 - chat interactions using included models
@@ -114,7 +114,7 @@ The included model (0x multiplier) is suitable for most everyday development tas
 
 On Copilot Free, all models consume at least one premium request per interaction. This applies even to models that are free for paid subscribers. See [requests in GitHub Copilot](https://docs.github.com/en/copilot/concepts/billing/copilot-requests) for the full breakdown by plan.
 
-Your organisation or enterprise administrator can control which models are available to you through Copilot policies. You may not see a model listed above in your integrated development environment (IDE) because
+Your organisation or enterprise administrator can control which models are available to you through Copilot policies. You may not see a model listed above in your integrated development environment (IDE) because:
 
 - your administrator may have restricted access to certain models to control costs or meet governance requirements
 - your plan may not include access to that specific model
@@ -151,7 +151,7 @@ For detailed guidance on Copilot code review and autonomous coding agent capabil
 
 These three features all involve autonomous or agentic behaviour but work differently and are billed differently.
 
-Agent mode works in your IDE as part of Copilot Chat. Each prompt you send counts as one premium request, multiplied by the selected model's multiplier. Internal tool calls are not charged separately. These include
+Agent mode works in your IDE as part of Copilot Chat. Each prompt you send counts as one premium request, multiplied by the selected model's multiplier. Internal tool calls are not charged separately. These include:
 
 - reading files
 - running commands
@@ -163,7 +163,7 @@ Copilot coding agent works on GitHub.com autonomously. You assign it a task and 
 
 Copilot CLI is a terminal-based agent that reached general availability on 25 February 2026. Its autopilot mode bills per autonomous step rather than per user prompt. This means costs can accumulate faster than in IDE agent mode. For full billing detail, plan requirements, and a cost comparison table, see the [Copilot CLI billing guide](copilot-cli-billing.md).
 
-For example, sending 10 messages in agent mode using GPT-5 mini costs 0 premium requests. Triggering one coding agent session on GitHub.com costs 1 premium request, regardless of how many files it changes. Running a 10-step CLI autopilot session with Claude Sonnet 4.5 costs 10 premium requests
+For example, sending 10 messages in agent mode using GPT-5 mini costs 0 premium requests. Triggering one coding agent session on GitHub.com costs 1 premium request, regardless of how many files it changes. Running a 10-step CLI autopilot session with Claude Sonnet 4.5 costs 10 premium requests.
 
 ### Important notes on specific features
 
@@ -177,7 +177,7 @@ Enterprise administrators should configure policies and budgets to control spend
 
 ### Step 1: review current usage
 
-Before making changes, [download a usage report](https://docs.github.com/en/billing/how-tos/products/view-productlicense-use) to see which developers frequently hit limits. Use the report to
+Before making changes, [download a usage report](https://docs.github.com/en/billing/how-tos/products/view-productlicense-use) to see which developers frequently hit limits. Use the report to:
 
 - identify power users
 - understand their requirements
@@ -187,7 +187,7 @@ Before making changes, [download a usage report](https://docs.github.com/en/bill
 
 Navigate to your [enterprise or organisation policy settings](https://docs.github.com/en/copilot/how-tos/manage-and-track-spending/manage-request-allowances) and review the 'Premium request paid usage' policy.
 
-The policy options are
+The policy options are:
 
 - enabled (default) to allow users to exceed their allowance with charges at $0.04 USD per request
 - enabled for specific products to allow paid usage only for selected AI tools (Copilot, Spark, coding agent)
@@ -201,7 +201,7 @@ You have two budget options. A bundled premium requests budget (recommended) man
 
 ### Step 4: choose hard or soft limits
 
-The 'Stop usage when budget limit is reached' setting can be
+The 'Stop usage when budget limit is reached' setting can be:
 
 - enabled to create a hard limit (blocks usage when budget exhausted, no surprise charges)
 - disabled to create a soft limit (allows overages with charges at $0.04 USD per request)
@@ -226,7 +226,7 @@ If you receive licences from multiple sources, you must [select a billing entity
 
 The 'Premium request paid usage' policy is enabled by default. This means users can exceed their allowance and charges accrue automatically at $0.04 USD per request. Without setting a budget, costs can grow throughout the billing cycle with no automatic limit.
 
-When you first configure Copilot, you should
+When you first configure Copilot, you should:
 
 - set budget caps immediately to control spending (see [step 3: set budgets](#step-3-set-budgets))
 - enable budget threshold alerts at 75%, 90% and 100% for early warning (see [step 5: enable budget alerts](#step-5-enable-budget-alerts))
@@ -245,20 +245,20 @@ GitHub Copilot's behaviour when you exceed your premium request allowance depend
 
 ### With a budget cap (hard limit)
 
-Enabling 'Stop usage when budget limit is reached' means
+Enabling 'Stop usage when budget limit is reached' means:
 
 - premium request usage stops when budget is exhausted
 - users automatically switch to included models (GPT-5 mini)
 - no charges beyond the budget
 - usage resumes when the budget resets or you increase it
 
-Benefits include
+Benefits include:
 
 - predictable costs
 - no unexpected billing
 - clear spending controls
 
-You should be aware that
+You should be aware that:
 
 - workflows may be disrupted if limits are reached unexpectedly
 - active budget management is needed
@@ -266,26 +266,26 @@ You should be aware that
 
 ### Without a budget cap (soft limit by default)
 
-Without a budget cap
+Without a budget cap:
 
 - Copilot automatically switches you to included models (GPT-5 mini) for the remainder of the billing cycle
 - you can still use Copilot with included models, and basic code completions and chat remain available
 - additional premium requests are billed at $0.04 USD per request after model multipliers (for example, Claude Opus 4.6 at 3x means each use costs $0.12 USD)
 - access to premium models and Code Review is restricted until your allowance resets or you increase your budget
 
-Benefits include
+Benefits include:
 
 - uninterrupted workflow
 - flexibility for varying needs
 - better support for unpredictable usage patterns
 
-You should be aware that
+You should be aware that:
 
 - costs can escalate without regular monitoring
 - close usage tracking is needed
 - unexpected bills are possible
 
-You will see this message in your IDE
+You will see this message in your IDE:
 
 > 'You have exceeded your premium request allowance. We have automatically switched you to an included model (GPT-5 mini). Enable additional paid premium requests to continue using premium models.'
 
@@ -293,7 +293,7 @@ This is not an error. It is how the system maintains service availability while 
 
 ### What remains available
 
-When premium requests are exhausted, you retain access to
+When premium requests are exhausted, you retain access to:
 
 - unlimited code completions with included models (GPT-5 mini)
 - Copilot Chat with included models
@@ -302,7 +302,7 @@ When premium requests are exhausted, you retain access to
 - all basic IDE integrations
 - standard code suggestions
 
-You cannot use
+You cannot use:
 
 - premium AI models (Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Opus 4.5, Claude Sonnet 4.6, Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5.4)
 - Copilot Code Review on pull requests
@@ -315,7 +315,7 @@ For full details on what Copilot can and cannot do in pull request workflows, se
 
 ### Enterprise budget hierarchy
 
-Enterprise-level budgets act as a failsafe for all spending. The budget hierarchy includes
+Enterprise-level budgets act as a failsafe for all spending. The budget hierarchy includes:
 
 - cost centre budgets for specific teams or departments
 - organisation budgets for individual organisations within the enterprise
@@ -352,7 +352,7 @@ Control costs while maintaining developer productivity through monitoring and sm
 
 #### In your IDE
 
-Click the Copilot status icon to
+Click the Copilot status icon to:
 
 - view current consumption
 - see which models you are using
@@ -360,7 +360,7 @@ Click the Copilot status icon to
 
 #### On GitHub.com
 
-Navigate to Settings, then Copilot to
+Navigate to Settings, then Copilot to:
 
 - view your [monthly usage dashboard](https://docs.github.com/en/copilot/how-tos/manage-and-track-spending/monitor-premium-requests)
 - download reports
@@ -384,7 +384,7 @@ GPT-5 mini is free on paid plans and capable for the majority of everyday work. 
 
 #### Monitor and communicate
 
-Download usage reports monthly to identify high consumers. Contact them to understand workflows and share best practices. Explain to your teams
+Download usage reports monthly to identify high consumers. Contact them to understand workflows and share best practices. Explain to your teams:
 
 - how premium requests work
 - when to use included versus premium models
