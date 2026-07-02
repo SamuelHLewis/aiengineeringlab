@@ -23,7 +23,7 @@ This guide explains what GitHub Copilot can and cannot do in pull request workfl
 
 ## Who this guide is for
 
-This guide is for:
+The intended audience for this guide includes:
 
 - developers working with pull requests in GitHub
 - engineers reviewing or creating PRs in government teams
@@ -161,7 +161,7 @@ For best results, keep PRs small and focused. If you must review a large PR, con
 
 Copilot code review consistently misses or gets wrong certain types of issues.
 
-What Copilot misses:
+Copilot commonly misses the following:
 
 - business logic errors (Copilot does not understand domain requirements)
 - architectural mismatches (it does not know your system design)
@@ -170,7 +170,7 @@ What Copilot misses:
 - data protection violations (GDPR, UK GDPR considerations)
 - performance issues that require profiling or load testing
 
-What Copilot gets wrong (false positives):
+Common false positives that Copilot may generate include:
 
 - flagging intentional patterns as errors when they are valid in context
 - suggesting changes that conflict with project conventions
@@ -233,46 +233,46 @@ Copilot responds with a suggested refactoring. You review the suggestion, implem
 
 `@copilot` mentions work differently depending on where you use them.
 
-In pull request comments:
+In pull request comments, Copilot:
 
-- Copilot responds in the comment thread
-- it can explain changes, suggest improvements, or answer questions about the PR
-- it cannot push commits to the branch
-- responses reflect the current PR state
+- responds in the comment thread
+- can explain changes, suggest improvements, or answer questions about the pull request
+- cannot push commits to the branch
+- provides responses that reflect the current pull request state
 
-In issue comments:
+In issue comments, Copilot:
 
-- Copilot can provide implementation guidance or clarify requirements
-- it cannot autonomously implement solutions unless formally assigned the issue
-- responses help you plan work but do not trigger autonomous action
+- can provide implementation guidance or clarify requirements
+- cannot autonomously implement solutions unless formally assigned the issue
+- provides responses that help you plan work but do not trigger autonomous action
 
-In GitHub Discussions:
+In GitHub Discussions, Copilot:
 
-- Copilot can answer general questions about code or best practices
-- it has limited context about your specific repository
-- primarily useful for learning or exploring approaches
+- can answer general questions about code or best practices
+- has limited context about your specific repository
+- is primarily useful for learning or exploring approaches
 
-Assigning issues to `@copilot` (not just mentioning):
+Assigning an issue to `@copilot`, rather than simply mentioning it, causes the agent to:
 
-- this triggers autonomous implementation (coding agent session)
-- Copilot creates a PR without human intervention
-- uses 1 premium request per session (see section 3 for details)
+- trigger autonomous implementation via a coding agent session
+- create a pull request without human intervention
+- consume one premium request per session (see section 3 for details)
 
 ### When does @Copilot trigger the coding agent?
 
 A simple `@copilot` mention in a comment does not always trigger the autonomous coding agent.
 
-The coding agent activates when:
+The coding agent is activated in the following circumstances:
 
-- you formally assign an issue to `@copilot` using the assignees dropdown
-- you comment `@copilot implement this` or similar implementation directives on an issue
-- you click "Implement suggestion" on a Copilot code review comment (if enabled)
+- formally assigning an issue to `@copilot` using the assignees dropdown
+- commenting `@copilot implement this` or a similar implementation directive on an issue
+- clicking "Implement suggestion" on a Copilot code review comment (if enabled)
 
-The coding agent is not triggered when:
+The coding agent is not activated in the following circumstances:
 
-- you ask `@copilot` to explain something in a PR comment
-- you request suggestions or ask questions without requesting implementation
-- you mention `@copilot` in a discussion or general comment
+- asking `@copilot` to explain something in a pull request comment
+- requesting suggestions or asking questions without requesting implementation
+- mentioning `@copilot` in a discussion or general comment
 
 When the coding agent runs, it consumes 1 premium request. Monitor your usage if your team frequently assigns issues to Copilot.
 
@@ -280,22 +280,22 @@ When the coding agent runs, it consumes 1 premium request. Monitor your usage if
 
 Custom instructions: `@copilot` in PR comments and code review does respect repository custom instructions in `.github/copilot-instructions.md`. You can use custom instructions to enforce project-specific conventions or review criteria.
 
-Content exclusions: Copilot code review respects content exclusion settings. Excluded files are not sent to Copilot and do not appear in review comments. However, there are important exceptions:
+Content exclusions: Copilot code review respects content exclusion settings. Excluded files are not sent to Copilot and do not appear in review comments. The following important exceptions apply:
 
-- the autonomous coding agent (when you assign issues to `@copilot`) does not respect content exclusions
-- agent mode in your IDE does not respect content exclusions
-- excluded files are accessible to the coding agent when it creates PRs
+- the autonomous coding agent (invoked when issues are assigned to `@copilot`) does not respect content exclusions
+- agent mode in the IDE does not respect content exclusions
+- excluded files remain accessible to the coding agent when it creates pull requests
 
 See [Content exclusions](content-exclusions.md) for full details on where exclusions apply and where they do not.
 
 ### Important constraints
 
-When you interact with `@copilot` in a PR:
+The following constraints apply when interacting with `@copilot` in a pull request:
 
-- Copilot cannot directly modify code in the PR—it can only suggest changes
-- you must apply suggested changes yourself by pushing new commits
-- Copilot does not have write access to your repository branches
-- responses reflect the current state of the PR and may not include very recent commits
+- copilot cannot directly modify code in the pull request; it can only suggest changes
+- suggested changes must be applied manually by pushing new commits
+- copilot does not have write access to repository branches
+- responses reflect the current state of the pull request and may not include very recent commits
 
 ## 3. Assigning issues to Copilot for autonomous implementation
 
@@ -319,25 +319,25 @@ Action:
 2. Describe expected behaviour: 'The endpoint should return an empty array when the query is empty'.
 3. Assign to `@copilot`.
 
-Result:
+Copilot responds by performing the following actions:
 
-- Copilot analyses the issue and identifies the affected endpoint
-- it adds input validation to handle empty query parameters
-- it writes tests to verify the fix
-- it opens a pull request with the changes
+- analysing the issue and identifying the affected endpoint
+- adding input validation to handle empty query parameters
+- writing tests to verify the fix
+- opening a pull request with the changes
 
 You review the PR, test locally, and either merge or request changes by mentioning `@copilot` in a comment.
 
 ### When to use issue assignment
 
-Issue assignment works well for:
+Issue assignment is well suited to the following tasks:
 
 - well-defined bug fixes with clear reproduction steps
 - adding small features with explicit requirements
 - implementing tests for existing functionality
 - making isolated changes that do not require architectural decisions
 
-Avoid assigning issues that require:
+Issue assignment should not be used for tasks that require:
 
 - understanding of organisational standards or policies
 - decisions about system architecture or design patterns
@@ -346,9 +346,9 @@ Avoid assigning issues that require:
 
 ### Reviewing Copilot-generated pull requests
 
-When Copilot opens a PR:
+Upon receiving a Copilot-generated pull request, reviewers should:
 
-- review all changes carefully as you would with any other PR
+- review all changes carefully, as they would with any other pull request
 - verify that the implementation matches the issue requirements
 - run tests locally to confirm behaviour
 - check for security or compliance concerns that Copilot may have missed
@@ -367,55 +367,55 @@ This section provides specific guidance for government development teams using C
 
 ### When to use Copilot PR review
 
-Use Copilot review when:
+Copilot review is appropriate in the following circumstances:
 
-- you want a quick automated scan before human review
-- you are working on a small, focused PR (1 to 5 files)
-- you want to catch common security issues like SQL injection or XSS
-- you need to identify code quality issues before requesting colleague review
-- you are prototyping and want rapid feedback
+- performing a quick automated scan before human review
+- working on a small, focused pull request (1 to 5 files)
+- catching common security issues such as SQL injection or XSS
+- identifying code quality issues before requesting colleague review
+- prototyping and requiring rapid feedback
 
-Do not rely solely on Copilot review when:
+Copilot review should not be used as the sole review mechanism in the following circumstances:
 
-- the PR modifies security-critical code (authentication, authorisation, cryptography)
-- the PR handles personal data or OFFICIAL-SENSITIVE information
-- the PR makes architectural changes affecting multiple systems
-- the PR implements compliance requirements (WCAG, GDPR, departmental standards)
-- the PR is large or touches many files (more than 10 files, more than 1000 lines)
+- the pull request modifies security-critical code (authentication, authorisation, cryptography)
+- the pull request handles personal data or OFFICIAL-SENSITIVE information
+- the pull request makes architectural changes affecting multiple systems
+- the pull request implements compliance requirements (WCAG, GDPR, departmental standards)
+- the pull request is large or touches many files (more than 10 files, more than 1,000 lines)
 
 Always conduct human code review for production code. Copilot review is a supplement, not a replacement.
 
 ### How to interpret Copilot review comments
 
-Treat Copilot review comments as suggestions requiring verification, not definitive findings.
+Copilot review comments should be treated as suggestions requiring verification rather than definitive findings.
 
-High-confidence signals (usually accurate):
+High-confidence signals, which are usually accurate, include:
 
 - missing input validation
 - obvious SQL injection or XSS vulnerabilities
 - syntax errors or type mismatches
 - unused variables or imports
 
-Medium-confidence signals (require verification):
+Medium-confidence signals, which require verification, include:
 
 - code quality suggestions (complexity, duplication)
 - performance concerns
 - missing error handling
 
-Low-confidence signals (often false positives):
+Low-confidence signals, which are often false positives, include:
 
 - architectural recommendations
 - suggestions that conflict with project conventions
 - refactoring suggestions that reduce clarity
 - 'security issues' already mitigated elsewhere
 
-When Copilot flags an issue:
+Upon identifying a flagged issue, reviewers should take the following steps:
 
-1. Read the comment and understand what it claims.
-2. Verify the issue exists in your specific context.
-3. Check if existing controls mitigate the concern.
-4. Apply the suggestion only if it improves the code.
-5. Dismiss false positives but document why.
+1. Read the comment and understand its claim.
+2. Verify whether the issue exists in the specific context.
+3. Check whether existing controls already mitigate the concern.
+4. Apply the suggestion only if it genuinely improves the code.
+5. Dismiss false positives and document the reasoning.
 
 ### Copilot review and mandatory code review requirements
 
@@ -501,10 +501,10 @@ Recommended approach for repositories with sensitive content:
 3. Do not use agent mode in your IDE (it ignores exclusions).
 4. Rely on manual development or chat-based assistance instead.
 
-For repositories with no sensitive content:
+In repositories containing no sensitive content:
 
 - all Copilot features are safe to use
-- monitor credit usage if using autonomous features frequently
+- credit usage should be monitored when autonomous features are used frequently
 
 See [Content exclusions](content-exclusions.md) for comprehensive details.
 
@@ -514,39 +514,39 @@ Copilot pull request capabilities have clear limitations. Understanding these he
 
 ### Copilot cannot:
 
-Approve or merge pull requests:
+Copilot cannot approve or merge pull requests:
 
-- Copilot can review and comment, but it cannot approve or merge PRs
+- it can review and comment, but is unable to approve or merge a pull request
 - all approvals and merges require human action
 
-Directly modify PR branches:
+Copilot cannot directly modify pull request branches:
 
-- Copilot cannot push commits to your feature branch
-- you must apply suggested changes yourself
+- it cannot push commits to feature branches
+- suggested changes must be applied manually
 
-Understand organisational context:
+Copilot cannot understand organisational context:
 
-- Copilot does not know your organisation's coding standards, architectural decisions, or security policies
+- it does not know an organisation's coding standards, architectural decisions, or security policies
 - it cannot verify compliance with government-specific requirements such as data residency or accessibility standards
 
-Make architectural decisions:
+Copilot cannot make architectural decisions:
 
-- Copilot cannot decide between different design patterns or approaches
+- it cannot decide between different design patterns or approaches
 - complex technical decisions require human judgement
 
-Access external systems or services:
+Copilot cannot access external systems or services:
 
-- Copilot cannot interact with your deployment pipelines, monitoring tools, or internal APIs
-- it works only with the code and context in the GitHub repository
+- it cannot interact with deployment pipelines, monitoring tools, or internal APIs
+- it works only with the code and context within the GitHub repository
 
-Guarantee security or correctness:
+Copilot cannot guarantee security or correctness:
 
-- Copilot may miss security vulnerabilities or logic errors
-- humans must review all code, particularly for production systems
+- it may miss security vulnerabilities or logic errors
+- all code must be reviewed by a human, particularly for production systems
 
-Work across multiple repositories:
+Copilot cannot work across multiple repositories:
 
-- Copilot operates within a single repository context
+- it operates within a single repository context
 - changes spanning multiple repositories require manual coordination
 
 ## 6. Credit usage and billing
@@ -571,10 +571,10 @@ Interactions with `@copilot` in PR comments do not directly consume premium requ
 
 ### Managing credit usage
 
-If your team uses PR capabilities frequently:
+Teams that frequently use pull request capabilities should:
 
-- monitor premium request usage in your GitHub organisation settings
-- set appropriate monthly budgets for your team
+- monitor premium request usage in their GitHub organisation settings
+- set appropriate monthly budgets for the team
 - consider whether to enable code review and coding agent features for all repositories or only selected ones
 
 See [Premium credit management](premium-credit-management.md) for detailed guidance on managing credits and budgets.
@@ -592,11 +592,11 @@ Refer to these sources for the most current information, as Copilot capabilities
 
 ## Next steps
 
-You can now:
+These capabilities now enable teams to:
 
 - request Copilot code review on pull requests to identify potential issues before human review
-- interact with @Copilot in PR comments to request explanations or improvements
+- interact with @Copilot in pull request comments to request explanations or improvements
 - assign well-defined issues to Copilot for autonomous implementation
-- integrate these capabilities into your team's existing workflow
+- integrate these capabilities into an existing team workflow
 
 Copilot is a tool to assist your workflow, not replace human review and decision-making. You remain accountable for the code you merge.

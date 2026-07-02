@@ -56,13 +56,13 @@ For these reasons, government teams should use organisation-managed (Business or
 
 You should see one of these.
 
-Personal plan indicator:
-- "Free", "Pro", or "Pro+" label
+A personal plan indicator includes:
+- a "Free", "Pro", or "Pro+" label
 - your personal GitHub username
 - no organisation name visible
 
-Organisation-managed plan indicator:
-- "Business" or "Enterprise" label
+An organisation-managed plan indicator includes:
+- a "Business" or "Enterprise" label
 - your organisation name (for example "Cabinet Office", "DfE")
 - an organisation logo or badge
 
@@ -73,14 +73,12 @@ Organisation-managed plan indicator:
 3. Select "Settings" from the dropdown
 4. In the left sidebar, click "Copilot"
 
-You will see:
-
-Personal plan:
+A personal plan shows:
 - your current subscription shown as "Free", "Pro", or "Pro+"
 - billing information under your personal account
 - no organisation context
 
-Organisation-managed plan:
+An organisation-managed plan shows:
 - "You are using Copilot via [Organisation Name]"
 - a note that "This is an organisation-managed subscription"
 - no billing information visible (organisation pays)
@@ -102,16 +100,14 @@ For the latest plan details, see the [official GitHub Copilot plans page](https:
 
 ### Personal plans
 
-Free
-
+The Free plan includes:
 - limited requests per month (usually 15 completion requests)
 - only available in select IDE extensions
 - code snippets may be shared with GitHub for product improvement
 - no usage analytics or team controls
 - no custom instructions or content exclusions
 
-Pro
-
+The Pro plan includes:
 - unlimited requests per month
 - available in most IDE extensions (VS Code, JetBrains, Neovim)
 - code snippets may be shared with GitHub for product improvement
@@ -119,8 +115,7 @@ Pro
 - no custom instructions or content exclusions
 - costs £10 per month per developer (paid personally)
 
-Pro+
-
+The Pro+ plan includes:
 - unlimited requests per month
 - available in all IDE extensions
 - advanced features including extended context window and agent mode
@@ -133,8 +128,7 @@ Pro+
 
 ### Organisation-managed plans
 
-Business
-
+The Business plan includes:
 - unlimited requests for all team members
 - includes all IDE extensions and tools (Copilot CLI, agent mode)
 - code is not shared with GitHub (secure for government use)
@@ -143,8 +137,7 @@ Business
 - costs approximately £19 to £21 per user per month (organisation pays)
 - suitable for most government teams
 
-Enterprise
-
+The Enterprise plan includes:
 - unlimited requests for all team members
 - includes all IDE extensions and tools
 - code is not shared with GitHub (secure for government use)
@@ -154,7 +147,7 @@ Enterprise
 - costs negotiated per contract (usually £25 or more per user per month)
 - suitable for large departments or high-security environments
 
-**Key difference:** Enterprise adds advanced authentication, data residency, and compliance options. Business is sufficient for most government use cases.
+Key difference would be enterprise adds advanced authentication, data residency, and compliance options. Business is sufficient for most government use cases.
 
 ---
 
@@ -188,9 +181,9 @@ Your organisation may have purchased an organisation-managed plan for you but it
 
 Contact your:
 
-- **Line manager or tech lead:** They can verify whether an organisation plan is available
-- **Your Copilot administrator:** If your organisation has a GitHub org, find the admin in your organisation settings on GitHub.com
-- **GitHub Enterprise support:** If you are unsure who administers Copilot for your team
+- line manager or tech lead to verify whether an organisation plan is available
+- Copilot administrator to find the right admin in your organisation settings on GitHub.com
+- GitHub Enterprise support if you are unsure who administers Copilot for your team
 
 See [What to do if you are on the wrong plan](#what-to-do-if-you-are-on-the-wrong-plan) for next steps.
 
@@ -200,12 +193,12 @@ See [What to do if you are on the wrong plan](#what-to-do-if-you-are-on-the-wron
 
 ### How to tell if you are on an organisation-managed plan
 
-You are on an organisation-managed plan if you:
+You are on an organisation-managed plan if:
 
-- see "Business" or "Enterprise" on your Copilot settings
-- see your organisation name (for example "Cabinet Office", "DSIT", "DfE") in your Copilot context
-- do not receive a personal invoice for Copilot
-- your organisation's GitHub admin manages your subscription
+- you see "Business" or "Enterprise" on your Copilot settings
+- you see your organisation name (for example "Cabinet Office", "DSIT", "DfE") in your Copilot context
+- you do not receive a personal invoice for Copilot
+- your subscription is managed by your organisation's GitHub admin
 
 ### Data handling on organisation-managed plans
 
@@ -215,7 +208,7 @@ This makes organisation-managed plans safe for government code.
 
 ### Features and controls available
 
-With a Business or Enterprise plan, your organisation can:
+A Business or Enterprise plan allows your organisation to:
 
 - set coding standards, security policies, or documentation requirements that Copilot follows (custom instructions)
 - prevent Copilot from accessing sensitive files (for example files containing secrets, credentials, or OFFICIAL-SENSITIVE data) using content exclusions
@@ -233,11 +226,8 @@ Ask your Copilot administrator if these controls are configured for your team.
 Take these actions:
 
 1. Verify that an organisation plan is available. Contact your line manager or tech lead, ask your organisation's GitHub admin (your org's GitHub settings then Copilot settings), or check your organisation's documentation or intranet for Copilot guidance.
-
 2. Request to be added to the organisation plan. Your admin should add your GitHub account to the organisation's Copilot subscription. This usually takes a few minutes to take effect.
-
 3. Verify the change. Close and restart your IDE, check your Copilot settings again, and you should now see your organisation name and "Business" or "Enterprise".
-
 4. If nothing changes after 30 minutes, sign out of GitHub in your IDE and sign back in, clear your IDE's cache (IDE documentation varies by tool), and restart your IDE again.
 
 ### Scenario 2: You are on a personal plan and should not be (you should not be using Copilot)
@@ -260,10 +250,10 @@ Take these actions:
 
 Common reasons include:
 
-- you are not yet added to the organisation's Copilot subscription (ask your admin)
-- you are using a different GitHub account (check you are signed into the right account)
-- your organisation manages Copilot through an enterprise account (ask IT or your Copilot admin)
-- your organisation's subscription has lapsed or is not active
+- not yet being added to the organisation's Copilot subscription (ask your admin)
+- being signed into a different GitHub account (check you are signed into the right account)
+- your organisation managing Copilot through an enterprise account (ask IT or your Copilot admin)
+- your organisation's subscription having lapsed or become inactive
 
 Take these actions:
 
@@ -343,18 +333,18 @@ Ask your Copilot administrator whether Copilot is available for your team and wh
 
 ## Next steps
 
-Once you have confirmed your licence type:
+Your next steps depend on your licence type.
 
-- If you are on a Business/Enterprise plan: see [Getting started with GitHub Copilot](getting-started.md) for usage guidance
-- If you are on a Personal plan and should be on an organisation plan: request to be added as described above
-- If you are on a Personal plan and unsure whether you should be: ask your line manager or your organisation's GitHub admin
+- if you are on a Business or Enterprise plan, see [Getting started with GitHub Copilot](getting-started.md) for usage guidance.
+- if you are on a Personal plan and should be on an organisation plan, request to be added as described above.
+- if you are on a Personal plan and unsure whether you should be, ask your line manager or your organisation's GitHub admin.
 
-For your Copilot administrator:
+Your Copilot administrator should:
 
-- See [Premium credit management](premium-credit-management.md) for subscription and billing guidance
-- See [Customisation guide](customisation-guide.md) for setting up custom instructions and policies
+- see [Premium credit management](premium-credit-management.md) for subscription and billing guidance
+- see [Customisation guide](customisation-guide.md) for setting up custom instructions and policies
 
-For all developers:
+All developers should:
 
-- See [Safe usage guidance](safe-usage-prototyping-vs-production.md) for appropriate usage patterns
-- See [Content exclusions](content-exclusions.md) if you work with sensitive files
+- see [Safe usage guidance](safe-usage-prototyping-vs-production.md) for appropriate usage patterns
+- see [Content exclusions](content-exclusions.md) if you work with sensitive files
