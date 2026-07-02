@@ -483,7 +483,7 @@ This script creates a:
 
 Use `templates/basic-component.tsx` as the base template with placeholder values that get replaced during generation.
 
-Follow these conventions:
+Conventions to follow, include:
 
 - PascalCase matching component name for files
 - `ComponentNameProps` interfaces for props

@@ -33,7 +33,7 @@ You should already be familiar with GitHub pull request workflows and basic Copi
 
 ## What GitHub Copilot offers for pull requests
 
-GitHub Copilot provides several capabilities to assist with pull request workflows:
+GitHub Copilot provides several capabilities to assist with pull request workflows this includes:
 
 - automated code review that identifies potential bugs, security issues, and quality concerns
 - interactive assistance through @Copilot mentions in PR comments
@@ -54,7 +54,7 @@ On GitHub.com:
 
 Copilot analyses the changes and provides review comments directly in the PR, similar to a human reviewer.
 
-Important: Copilot always leaves a 'Comment' review. It never creates an 'Approve' or 'Request changes' review. This means Copilot reviews do not count toward required approvals and will not block merging. Human review remains mandatory.
+Copilot always leaves a 'Comment' review. It never creates an 'Approve' or 'Request changes' review. This means Copilot reviews do not count toward required approvals and will not block merging. Human review remains mandatory.
 
 ### What code review covers
 
