@@ -333,11 +333,11 @@ Ask your Copilot administrator whether Copilot is available for your team and wh
 
 ## Next steps
 
-Your next steps depend on your licence type.
+The next steps depend on which type of licence you hold:
 
-- if you are on a Business or Enterprise plan, see [Getting started with GitHub Copilot](getting-started.md) for usage guidance.
-- if you are on a Personal plan and should be on an organisation plan, request to be added as described above.
-- if you are on a Personal plan and unsure whether you should be, ask your line manager or your organisation's GitHub admin.
+- if you are on a Business or Enterprise plan, see [Getting started with GitHub Copilot](getting-started.md) for usage guidance
+- if you are on a Personal plan and should be on an organisation plan, request to be added as described above
+- if you are on a Personal plan and unsure whether you should be, ask your line manager or your organisation's GitHub admin
 
 Your Copilot administrator should:
 
