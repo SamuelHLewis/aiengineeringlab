@@ -90,14 +90,16 @@ When working with AI code assistants, you often repeat instructions such as:
 - follow our security guidelines
 - apply our team's coding standards
 
-This repetition takes time, and requirements can get missed.
 
 Configure an MCP server once, and your AI applies this knowledge automatically. Benefits include:
 
 - less repetition because you do not need to explain the same requirements each time
-- higher quality output because standards apply from the start
-- fewer errors because the server applies the same guidance consistently
+- higher quality, more consistent output because your design and code standards apply from the start
+- more secure code because security best practices are applied by default, not left to memory
+- fewer errors because the server applies the same guidance every time
+- more accessible services that work for everyone through built-in WCAG 2.2 requirements
 - faster onboarding because new team members learn standards naturally through the AI's responses
+- standards that scale across every project and person without extra effort, so quality does not depend on who is doing the work
 
 ---
 
