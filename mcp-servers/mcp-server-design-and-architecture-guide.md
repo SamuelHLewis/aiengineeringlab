@@ -945,7 +945,7 @@ The solution is to always test with the actual AI tools your users will use (Cla
 
 ### Pitfall: ignoring security from the start
 
-The problem is building functionality first, planning to add security later.
+The problem is when building for functionality first, and not planning to add security until later.
 
 Symptoms include:
 - secrets hardcoded or in configuration files

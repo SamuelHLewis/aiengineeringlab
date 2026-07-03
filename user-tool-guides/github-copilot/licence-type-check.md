@@ -147,7 +147,7 @@ The Enterprise plan includes:
 - costs negotiated per contract (usually £25 or more per user per month)
 - suitable for large departments or high-security environments
 
-Key difference would be enterprise adds advanced authentication, data residency, and compliance options. Business is sufficient for most government use cases.
+The key difference between these plans are that Enterprise adds advanced authentication, data residency, and compliance options. However, the Business plan is sufficient for most government use cases.
 
 ---
 
@@ -269,9 +269,9 @@ Take these actions:
 
 Your colleague's Business plan is safer for government code (no sharing with third parties) and the organisation can track adoption and enforce policies. If you are both working on the same codebase, you should both be on the Business plan to ensure consistency.
 
-If you are working on different projects, confirm with your line manager what licence type is appropriate.
+If you are working on different projects, confirm with your line manager which licence type is appropriate.
 
-### I am a contractor or consultant. What licence should I use?
+### I am a contractor or consultant. Which licence should I use?
 
 If you are working on government code, you should use the organisation's Business or Enterprise plan, not a personal plan. Your organisation's Copilot admin should add you to the subscription. If the organisation has not set this up, raise it with them before using Copilot.
 
@@ -279,7 +279,7 @@ If you are working on your own commercial work, a personal Pro or Pro+ plan is a
 
 ### My organisation does not have a Copilot plan yet. Can I use my personal plan temporarily?
 
-Not recommended, particularly for government code.
+Personal plans are not recommended, particularly for government code.
 
 However, if you must use Copilot now (for example to pilot its use), disable telemetry in your IDE settings. Document this as temporary and set a deadline to migrate to an organisation plan. Notify your line manager and Copilot administrator that this is happening. Do not store sensitive files or credentials in code you write with Copilot.
 
