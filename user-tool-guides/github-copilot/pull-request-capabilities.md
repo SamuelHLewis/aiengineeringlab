@@ -33,7 +33,7 @@ You should already be familiar with GitHub pull request workflows and basic Copi
 
 ## What GitHub Copilot offers for pull requests
 
-GitHub Copilot provides several capabilities to assist with pull request workflows this includes:
+GitHub Copilot provides several capabilities to assist with pull request workflows. These include:
 
 - automated code review that identifies potential bugs, security issues, and quality concerns
 - interactive assistance through @Copilot mentions in PR comments
