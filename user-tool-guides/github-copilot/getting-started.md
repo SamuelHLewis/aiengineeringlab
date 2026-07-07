@@ -15,7 +15,7 @@
 
 [Next steps](#5-next-steps)
 
-This guide helps you start using GitHub Copilot in a development environment. Developers of all experience levels can use this guide.
+This guide helps you start using GitHub Copilot in a development environment. It is for developers with a range of experience.
 
 This guide has clear steps. Follow them in order.
 
@@ -40,11 +40,21 @@ It can help you to:
 - create tests and documentation
 - reduce time spent on repetitive tasks
 
-Read the [GitHub Copilot documentation](https://docs.github.com/en/copilot).
+Essential reading: [GitHub Copilot documentation](https://docs.github.com/en/copilot)
 
 ## 1. Access, licensing and public sector considerations
 
-Before installing Copilot, you should understand how access and data handling work.
+Before installing Copilot, verify your licence type and understand how access and data handling work.
+
+### Check your licence type first
+
+Determine whether you are on a personal plan (Free/Pro/Pro+) or an organisation-managed plan (Business/Enterprise). This affects data handling, features, and whether your organisation can track adoption.
+
+See [How to check your GitHub Copilot licence type](licence-type-check.md) for step-by-step instructions.
+
+If you are on a personal plan and should be on an organisation-managed plan, contact your line manager or Copilot administrator. Ask them to add you to your organisation's subscription before continuing.
+
+### Data handling and public sector use
 
 Many public sector organisations use GitHub Copilot Business or Enterprise.
 
@@ -145,4 +155,4 @@ After you are comfortable with the basics, you can:
 - use Copilot to generate tests and documentation
 - explore advanced features such as refactoring and code review
 
-When you are confident using GitHub Copilot, read the [advanced guide on using GitHub Copilot](advanced-use.md).
+Once you are confident using GitHub Copilot, consider reading the [advanced guide on using GitHub Copilot](advanced-use.md).
