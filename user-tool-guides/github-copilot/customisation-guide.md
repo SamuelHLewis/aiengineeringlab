@@ -93,7 +93,7 @@ The model a custom agent uses determines the credit cost of every session. An ag
 
 ### File format
 
-Create agent profile files in `.github/agents/`. Both `.md` and `.agent.md` extensions are supported. The `.agent.md` extension is the recommended convention in VS Code.
+Create agent profile files in `.github/agents/`. You can use either `.md` or `.agent.md` extensions. The `.agent.md` extension is the recommended convention in VS Code.
 
 ```markdown
 ---
@@ -381,13 +381,13 @@ For preToolUse hooks only, output a JSON object with your permission decision.
 
 ### Common use cases
 
-Hooks support common use cases to:
+Hooks support the following common use cases:
 
-- block destructive commands and enforce file access policies for security
-- log all actions for audit trails for compliance
-- run linters before code edits and validate test coverage for quality
-- alert teams on production changes for notifications
-- track tool usage across teams for cost management
+- blocking destructive commands and enforcing file access policies for security
+- logging all actions for audit trails for compliance
+- running linters before code edits and validating test coverage for quality
+- alerting teams on production changes for notifications
+- tracking tool usage across teams for cost management
 
 For broader guidance on controlling credit spend and setting spending limits, see the [premium credit management guide](premium-credit-management.md#managing-agent-mode-and-premium-credit-spend).
 
@@ -483,7 +483,7 @@ This script creates a:
 
 Use `templates/basic-component.tsx` as the base template with placeholder values that get replaced during generation.
 
-Use:
+Conventions to follow, include:
 
 - PascalCase matching component name for files
 - `ComponentNameProps` interfaces for props
@@ -513,7 +513,7 @@ Result
 
 ### Complete example workflow
 
-This example task adds comprehensive tests to an authentication module.
+In this example task, you add comprehensive tests for an authentication module.
 
 1. Custom agent where user selects `@test-specialist` with restricted tools that cannot modify production code and testing expertise.
 
@@ -525,7 +525,7 @@ This example task adds comprehensive tests to an authentication module.
 
 5. Subagent where test specialist needs research, invokes `@documentation-reader`, gets Jest best practices summary and returns to main agent.
 
-6. Result is a complete test suite following project conventions (instructions), created by the specialist (custom agent), validated by security policies (hooks), using templates (skill) and informed by research (subagent).
+6. Result is a complete test suite following project conventions (instructions), created by the specialist (custom agent) and validated by security policies (hooks). It uses templates (skill) and draws on research (subagent).
 
 ### Comparison
 
@@ -561,7 +561,7 @@ Implement `preToolUse` hooks that block hardcoded credentials and dangerous comm
 
 Track all actions through comprehensive audit logging for instructions. Use `@compliance-auditor` as a custom agent with role-specific tools limited to read and reporting functions.
 
-Implement `sessionStart` hooks to log user and session metadata, `preToolUse` hooks to enforce file access policies, `postToolUse` hooks to track all actions to a database, and `sessionEnd` hooks to generate compliance reports. Create an `audit-trail-generator` skill with automated report generation and policy templates.
+Implement `sessionStart` hooks to log user and session metadata and `preToolUse` hooks to enforce file access policies. Use `postToolUse` hooks to track all actions to a database, and `sessionEnd` hooks to generate compliance reports. Create an `audit-trail-generator` skill with automated report generation and policy templates.
 
 #### Quality focused testing
 
@@ -594,7 +594,7 @@ Implement hooks to enforce policies and maintain audit trails.
 
 1. Add `preToolUse` hooks for security validation.
 2. Add `postToolUse` hooks for audit logging.
-3. Test hook scripts locally: `echo '{"toolName":"bash"}' | ./script.sh`
+3. Test hook scripts locally: `echo '{"toolName":"bash"}' | ./script.sh`.
 
 ### Phase 4: automation
 
