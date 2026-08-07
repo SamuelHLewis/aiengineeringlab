@@ -39,10 +39,10 @@ Then create the lightweight Linux VM that will host your containers:
 podman machine init
 ```
 
-Finally, create an image for the container that contains the coding agent and its dependencies:
+Finally, create an image for the container that contains the coding agent and its dependencies, by running this command from the root dir of this repo:
 
 ```
-podman build -t localhost/opencode-base ~/coding_sandbox/
+podman build -t localhost/opencode-base .
 ```
 
 ### Podman Custom Command
@@ -164,3 +164,23 @@ These instructions have been tested with OpenCode, a vendor-agnostic agentic cod
 
 1. `Containerfile`: Change the `RUN` command to install the dependencies that your harness needs, and to issue the installation command. Also change the `ENTRYPOINT` value to reflect the name of your harness.
 2. `Custom command`: Change the custom command that you add to your shell config file so that it creates the appropriate binary and config folders
+
+## Troubleshooting
+
+### Error `unable to get issuer certificate`
+If you encounter the error `unable to get issuer certificate` when trying to connect to a model, this means that your VPN setup is handling outbound requests to the model through an intermediate service, and your podman image doesn't have the necessary certificate to trust this service. You can solve this by:
+
+1. Generate the root certificate for your VPN service. For Zscaler, you would run this on the terminal:
+```
+security find-certificate -a -c "Zscaler" -p /Library/Keychains/System.keychain > ~/zscaler-root-ca.crt
+```
+
+2. Change the COPY statement in the Containerfile to copy the certificate generated in Step 1 into `/usr/local/share/ca-certificates/`
+```
+COPY zscaler-root-ca.crt /usr/local/share/ca-certificates/zscaler-root-ca.crt
+```
+
+3. Rebuild the image, which will now copy the certificate and use `update-ca-certificates` to use it when handling outbound requests to your model
+```
+podman build -t localhost/opencode-base .
+```
